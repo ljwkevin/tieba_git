@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!-- 寮曞叆閰嶇疆鏂囦欢 -->
+
+    <!-- 鎸囧畾鏁版嵁杩炴帴椹卞姩jar鍦板潃 -->
+    <classPathEntry location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar" />
+
+    <!-- 涓�涓暟鎹簱涓�涓猚ontext -->
+    <context id="infoGuardian">
+        <!-- 娉ㄩ噴 -->
+        <commentGenerator >
+            <property name="suppressAllComments" value="false"/><!-- 鏄惁鍙栨秷娉ㄩ噴 -->
+            <property name="suppressDate" value="true" /> <!-- 鏄惁鐢熸垚娉ㄩ噴浠ｆ椂闂存埑-->
+        </commentGenerator>
+
+        <!-- jdbc杩炴帴 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/tieba?characterEncoding=utf8" userId="root"
+                        password="root" />
+
+        <!-- 绫诲瀷杞崲 -->
+        <javaTypeResolver>
+            <!-- 鏄惁浣跨敤bigDecimal锛� false鍙嚜鍔ㄨ浆鍖栦互涓嬬被鍨嬶紙Long, Integer, Short, etc.锛� -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 鐢熸垚瀹炰綋绫诲湴鍧� -->
+        <javaModelGenerator targetPackage="com.henu.bean"
+                            targetProject="F:\work\tieba\src\main\java" >
+            <!-- 鏄惁鍦ㄥ綋鍓嶈矾寰勪笅鏂板姞涓�灞俿chema,eg锛歠ase璺緞com.oop.eksp.user.model锛� true:com.oop.eksp.user.model.[schemaName] -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 鏄惁閽堝string绫诲瀷鐨勫瓧娈靛湪set鐨勬椂鍊欒繘琛宼rim璋冪敤 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 鐢熸垚mapxml鏂囦欢 -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="F:\work\tieba\src\main\resources" >
+            <!-- 鏄惁鍦ㄥ綋鍓嶈矾寰勪笅鏂板姞涓�灞俿chema,eg锛歠ase璺緞com.oop.eksp.user.model锛� true:com.oop.eksp.user.model.[schemaName] -->
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+
+        <!-- 鐢熸垚mapxml瀵瑰簲client锛屼篃灏辨槸鎺ュ彛dao -->
+        <javaClientGenerator targetPackage="com.henu.dao"
+                             targetProject="F:\work\tieba\src\main\java" type="XMLMAPPER" >
+            <!-- 鏄惁鍦ㄥ綋鍓嶈矾寰勪笅鏂板姞涓�灞俿chema,eg锛歠ase璺緞com.oop.eksp.user.model锛� true:com.oop.eksp.user.model.[schemaName] -->
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+
+        <!-- 閰嶇疆琛ㄤ俊鎭� -->
+       <!-- <table schema="tieba" tableName="category"
+               domainObjectName="Category" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>
+        <table schema="tieba" tableName="huifu"
+               domainObjectName="HuiFu" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>
+        <table schema="tieba" tableName="pinglun"
+               domainObjectName="PingLun" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>
+        <table schema="tieba" tableName="shoucang"
+               domainObjectName="ShouCang" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>
+        <table schema="tieba" tableName="tieba"
+               domainObjectName="TieBa" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>
+        <table schema="tieba" tableName="tiezi"
+               domainObjectName="TieZi" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>
+        <table schema="tieba" tableName="user"
+               domainObjectName="User" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>
+        <table schema="tieba" tableName="user_tieba"
+               domainObjectName="UserTieba" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>
+        <table schema="tieba" tableName="userinfo"
+               domainObjectName="UserInfo" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>-->
+        <table schema="tieba" tableName="user_user"
+               domainObjectName="userUser" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>
+        <table schema="tieba" tableName="user_tiezi"
+               domainObjectName="userTieZi" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false">
+        </table>
+
+    </context>
+</generatorConfiguration>
